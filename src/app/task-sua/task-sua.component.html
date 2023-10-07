@@ -1,0 +1,40 @@
+
+    <form method="post" class="!bg-white" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="name" class="form-label">Tên Task</label>
+          <input type="text" class="form-control" name="tenTask" [(ngModel)]="TASKSua.tenTask"> 
+        </div>
+        <div class="mb-3">
+            <label for="leader" class="form-label">Dự Án ID</label>
+            <select class="form-select" aria-label="Default select example" name="duAnID" [(ngModel)]="TASKSua.duAnID"> >
+                <option selected>ID Dự Án</option>
+                <option *ngFor="let duan of listDuAn" [value]="duan.id">{{duan.id}}</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label for="leader" class="form-label">Nhân Viên ID</label>
+            <select class="form-select" aria-label="Default select example" name="nhanvienID" [(ngModel)]="TASKSua.nhanvienID"> >
+                <option selected>ID Nhân Viên</option>
+                <option *ngFor="let nhanvien of listNhanVien" [value]="nhanvien.id">{{nhanvien.id}}</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label for="mota" class="form-label">Mô Tả</label>
+            <input type="text"  class="form-control"name="moTa" [(ngModel)]="TASKSua.moTa"> 
+        </div>
+        <div class="mb-3">
+            <label for="leader" class="form-label">Start</label>
+            <select class="form-select" aria-label="Default select example" name="status" [(ngModel)]="TASKSua.status"> >
+                <option selected>Start</option>
+                <option *ngFor="let task of listTask" [value]="task.id">{{task.status}}</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label for="leader" class="form-label">priority</label>
+            <select class="form-select" aria-label="Default select example" name="priority" [(ngModel)]="TASKSua.priority"> >
+              <option *ngFor="let task of listTask" [value]="task.id">{{task.priority}}</option>
+              </select>
+        </div>
+        <button (click)="capnhatTask ()" class="btn btn-primary">Sửa</button>
+      </form>
+

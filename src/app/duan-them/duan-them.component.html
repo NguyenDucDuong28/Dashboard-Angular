@@ -1,0 +1,35 @@
+
+    <form #frm1="ngForm" method="post" class="p-6 bg-[#f9f9f9] rounded-2xl flex flex-col gap-y-2" (ngSubmit)="themDA()">
+        <div class="flex flex-col mb-3 gap-y-2">
+          <label for="name" class="mb">Tên Dự Án</label>
+          <input id="name" type="text" ngModel required minlength="6" class="p-2 border-2 border-gray-200 rounded-md focus:border-blue-300" name="tenDuAn" [(ngModel)]="DAThem.tenDuAn" #name="ngModel">
+          <em *ngIf="name.errors?.['required']" class="text-red-500">Bạn chưa nhập tên dự án</em>
+          <em *ngIf="name.errors?.['minlength']" class="text-red-500">Độ dài tối thiểu là 6 kí tự</em>
+        </div>
+        <div class="flex flex-col mb-3 gap-y-2">
+          <label for="start" class="mb">Ngày bắt đầu</label>
+          <input id="start" type="text" class="p-2 border-2 border-gray-200 rounded-md focus:border-blue-300" name="ngayStart" [(ngModel)]="DAThem.ngayStart" #date="ngModel" required minlength="6">
+          <em *ngIf="date.errors?.['required']" class="text-red-500">Bạn chưa nhập ngày bắt đầu</em>
+          <em *ngIf="date.errors?.['minlength']" class="text-red-500">Độ dài tối thiểu là 6 kí tự</em>
+        </div>
+        <div class="flex flex-col mb-3 gap-y-2">
+          <label for="money" class="mb">Tiền</label>
+          <input id="money" type="text" class="p-2 border-2 border-gray-200 rounded-md focus:border-blue-300" name="tien" [(ngModel)]="DAThem.tien" #money="ngModel" required>
+          <em *ngIf="money.errors?.['required']" class="text-red-500">Bạn chưa nhập tiền</em>
+        </div>
+        <div class="flex flex-col mb-3 gap-y-2">
+          <label for="leader" class="mb">Leader</label>
+          <input id="leader" type="text" class="p-2 border-2 border-gray-200 rounded-md focus:border-blue-300" name="leader" [(ngModel)]="DAThem.leader" #leader="ngModel" required>
+          <em *ngIf="leader.errors?.['required']" class="text-red-500">Bạn chưa nhập leader</em>
+        </div>
+        <div class="flex flex-col mb-3 gap-y-2">
+            <label for="amout" class="form-label">Số Lượng Thành Viên</label>
+            <select class="border-2 border-gray-300 w-[200px] p-2" aria-label="Default select example" name="thanhvien" [(ngModel)]="DAThem.thanhvien"  #soluong="ngModel" required>
+                <option selected>Số Lượng Thành viên</option>
+                <option *ngFor="let duan of listDuAn" [value]="duan.id">{{duan.thanhvien}}</option>
+            </select>
+          <em *ngIf="soluong.errors?.['required']" class="text-red-500">Bạn chưa nhập số lượng thành viên</em>
+        </div>
+          <!-- (click)="themDA()" -->
+        <button  type="submit" class="p-2 mx-auto text-white bg-orange-400 rounded-md w-36 hover:shadow-lg hover:bg-orange-500">Thêm</button>
+      </form>

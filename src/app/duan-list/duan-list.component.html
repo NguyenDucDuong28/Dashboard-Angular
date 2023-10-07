@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="table-data">
+        <div class="order">
+            <div class="head">
+                <h3>Danh Sách Dự Án</h3>
+                <form class="px-2 border border-gray-400 rounded-md d-flex">
+                    <i class='bx bx-search' ></i>
+                    <input name="tk" [(ngModel)]="
+                    tukhoa" class="px-4 py-2" type="search" placeholder="Search..." aria-label="Search">
+                    <button class="invisible opacity-0" type="submit" (click)="locSP()">Search</button>
+                </form>
+            </div>
+            <table>
+                <thead>
+                    <tr class="!text-xl font-medium">
+                        <th>STT</th>
+                        <th>Tên dự án</th>
+                        <th>Ngày bắt đầu</th>
+                        <th>Tiền</th>
+                        <th>Chức Năng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let da of listDuAn; let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{da.tenDuAn}}</td>
+                        <td> {{da.ngayStart | date:"dd/MM/yyyy"}}</td>
+                        <td> {{da.tien.toLocaleString('vn-VN')}} VND</td>
+                        <td>
+                            <a href="" [routerLink]="['/duan/sua/',da.id]"><i class="fa-solid fa-pen-to-square"></i></a> &nbsp;
+                            <a href="#" (click)="xoaDuAn(da.id)"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+</body>
+</html>

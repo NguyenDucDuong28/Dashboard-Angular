@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form   method="post" class="form-post" id="addSongForm" action="" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="name" class="form-label">Tên Dự Án</label>
+          <input type="text" class="form-control" name="tenDuAn" [(ngModel)]="DASua.tenDuAn">
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label">Ngày Start</label>
+            <input type="text" class="form-control" name="ngayStart" [(ngModel)]="DASua.ngayStart" >
+        </div>
+        <div class="mb-3">
+            <label for="timestamp" class="form-label">Tiền</label>
+            <input type="text" class="form-control" name="tien" [(ngModel)]="DASua.tien" >
+        </div>
+        <div class="mb-3">
+            <label for="leader" class="form-label">leader</label>
+            <input type="text"  class="form-control" name="leader" [(ngModel)]="DASua.leader">
+        </div>
+        <div class="mb-3">
+            <label for="leader" class="form-label">Số Lượng Thành Viên</label>
+            <select class="form-select" aria-label="Default select example" name="thanhvien" [(ngModel)]="DASua.thanhvien">
+                <option selected>Số Lượng Thành viên</option>
+                <option *ngFor="let duan of listDuAn" [value]="duan.id">{{duan.tenDuAn}}</option>
+              </select>
+        </div>
+        <button  (click)="capnhatDA()" class="btn btn-primary">Sửa</button>
+      </form>
+</body>
+<script>
+
+</script>
+</html>

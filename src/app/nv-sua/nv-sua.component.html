@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  method="post" class="form-post" id="addSongForm" action="" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="name" class="form-label">Họ</label>
+          <input type="text" class="form-control" name="ho" [(ngModel)]="NVSua.ho">
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label">Tên</label>
+            <input type="text" class="form-control" name="ten" [(ngModel)]="NVSua.ten" >
+        </div>
+        <div class="mb-3">
+            <label for="timestamp" class="form-label">Ngày Sinh</label>
+            <input type="text" class="form-control" name="ngaysinh" [(ngModel)]="NVSua.ngaysinh" >
+        </div>
+        <div class="mb-3">
+            <label for="leader" class="form-label">Phái</label>
+            <select class="form-select" aria-label="Default select example" name="phai" [(ngModel)]="NVSua.phai">
+                <option value="true">Nam</option>
+                <option value="false">Nữ</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label for="leader" class="form-label">Khu Vực</label>
+            <select class="form-select" aria-label="Default select example" name="khuvuc" [(ngModel)]="NVSua.khuvuc">
+                <option value="Bắc">Bắc </option>
+                <option value="Nam">Nam</option>
+                <option value="Trung">Trung</option>
+              </select>
+        </div>
+          
+        <button  (click)="capnhatNV()" class="btn btn-primary">Sửa</button>
+      </form>
+</body>
+</html>

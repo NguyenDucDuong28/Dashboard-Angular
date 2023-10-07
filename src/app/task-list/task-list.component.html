@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="table-data">
+        <div class="order">
+            <div class="head">
+                <h3>Recent Orders</h3>
+                <i class='bx bx-search' ></i>
+                <i class='bx bx-filter' ></i>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên Task</th>
+                        <th>Dự Án ID</th>
+                        <th>Nhân Viên ID</th>
+                        <th>Start</th>
+                        <th>priority</th>
+                        <th>Chức Năng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let task of listTask">
+                        <td>{{task.id}}</td>
+                        <td>{{task.tenTask}}</td>
+                        <td>{{task.duAnID}}</td>
+                        <td>{{task.nhanvienID}}</td>
+                        <td>{{task.status}}</td>
+                        <td>{{task.priority}}</td>
+                        <td>
+                            <a href="" [routerLink]="['/task/sua/',task.id]">Sửa</a> &nbsp;
+                            <a href="#" (click)="xoaTask(task.id)">Xóa</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+</body>
+</html>

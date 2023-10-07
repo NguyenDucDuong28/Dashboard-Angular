@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./nv-list.component.css">
+</head>
+<body>
+    <div class="table-data">
+        <div class="order">
+            <div class="head">
+                <label for="cars">Choose a car:</label>
+            <select id="cars" [(ngModel)]="selectKhuVuc" (change)="locNV()">
+                    <option value="Bắc">Bắc</option>
+                    <option value="Trung">Trung</option>
+                    <option value="Nam">Nam</option>
+            </select>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Họ </th>
+                        <th>Tên</th>
+                        <th>Ngày Sinh</th>
+                        <th>Phai</th>
+                        <th>Khu Vực</th>
+                        <th>Chức Năng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let nv of listNhanVien">
+                        <td> {{nv.id}} </td>
+                        <td> {{nv.ho}} </td>
+                        <td>{{nv.ten}}</td>
+                        <td> {{nv.ngaysinh}}</td>
+                        <td> {{nv.phai ? "Nam" : "Nữ"}}</td>
+                        <td> {{nv.khuvuc}}</td>             
+                        <td>
+                            <a href="" [routerLink]="['/nhanvien/sua/',nv.id]"><i class="fa-solid fa-pen-to-square"></i></a> &nbsp;
+                            <a href="#" (click)="xoaNhanVien(nv.id)"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./app.component.css">
+	<title>Admin</title>
+</head>
+<body>
+	<!-- SIDEBAR -->
+	<app-sidebar></app-sidebar>
+	<!-- SIDEBAR -->
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<app-nav>
+		</app-nav>
+		<!-- NAVBAR -->
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Wings control</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Bảng Điều Khiển</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Trang Chủ</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="!mb-9 ">
+				<app-box-info></app-box-info>
+			</div>
+      		<article class="col-md-12 bg-light"> <router-outlet></router-outlet></article>
+    	</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+</body>
+</html>
